@@ -1,0 +1,36 @@
+/* modal */
+.modal-content {
+  background: #fff8dc;
+  width: 700px;
+  max-width: 100%;
+  border-radius: 14px;
+  padding: 0;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  font-family: 'Lexend', sans-serif;
+}
+
+/* body modal padding */
+.modal-body {
+  padding: 20px 28px;
+  max-height: 620px;
+  overflow-y: auto;
+}
+
+/* steps */
+.steps { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px; }
+.step-circle {
+  width:32px; height:32px; border-radius:50%; background:#dcdcdc; color:#333; display:inline-flex; align-items:center; justify-content:center; font-weight:700;
+}
+.step-circle.active { background:#9a5993; color:#fff; }
+.step-line { width:36px; height:4px; background:#dcdcdc; display:inline-block; vertical-align:middle; }
+.step-circle.active + .step-line { background:#9a5993; }
+
+/* form steps */
+.form-step { display:none; animation: fadeIn .25s ease; }
+.form-step-active { display:block; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none} }
+
+/* inputs/buttons */
+.form-control { border-radius:8px; }
+.btn-dark { background:#4b2a59; border:none; }
+.btn-dark:hover { background:#6d3f7d; }

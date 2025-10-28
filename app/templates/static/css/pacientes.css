@@ -1,0 +1,62 @@
+/* Estilos generales para el cuerpo y el contenedor principal (simulando base.html) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f5; /* Fondo muy claro, casi blanco con un toque lila */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Contenedor principal para la "ventanita bonita" */
+.content { /* Asumiendo que el bloque {% block content %} está dentro de un div con esta clase */
+    background-color: #ffffff; /* Fondo blanco para la ventanita */
+    padding: 30px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(138, 43, 226, 0.15); /* Sombra suave de color lila */
+    max-width: 90%;
+    width: 1000px; /* Ancho fijo para la ventana */
+    margin-top: 30px;
+}
+
+/* Estilo del título */
+h2 {
+    color: #8a2be2; /* Azul violeta (lila intenso) */
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 2px solid #e6e6fa; /* Subrayado sutil */
+    padding-bottom: 10px;
+}
+
+/* Estilo del botón "Nuevo Paciente" */
+a[href*="pacientes_create"] {
+    display: inline-block;
+    background-color: #9370db; /* Lila medio */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a[href*="pacientes_create"]:hover {
+    background-color: #8a2be2; /* Lila más oscuro al pasar el ratón */
+}
+
+/* Estilo de la tabla de pacientes */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Bordes limpios */
+    margin-top: 15px;
+    background-color: #fff;
+    border: 1px solid #dcdcdc; /* Borde sutil */
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen */
+}
+
+/* Encabezados de la tabla */

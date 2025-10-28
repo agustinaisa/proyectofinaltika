@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variables CSS para colores y tamaños */
+:root {
+    --primary-purple: #8b7499;
+    --dark-purple: #774c74;
+    --light-purple: rgb(150, 92, 173);
+    --extra-light-purple: rgb(233, 205, 250);
+    --background-light: rgb(241, 231, 241);
+    --text-color-dark: #333;
+    --text-color-light: white;
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Sutil sombra */
+    --border-radius: 15px;
+    --transition-speed: 0.5s ease-in-out;
+}
+
+/* Restablecimiento básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Un color de fondo más suave */
+    width: 100%;
+    min-height: 100vh; /* Usa min-height para asegurar que ocupe al menos toda la altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Añade un poco de padding para evitar que el contenido toque los bordes en pantallas pequeñas */
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+.container {
+    width: 90%; /* Más flexible */
+    max-width: 900px; /* Un máximo para pantallas grandes */
+    min-height: 500px; /* Altura mínima para asegurar espacio */
+    display: flex;
+    position: relative;
+    background-color: var(--text-color-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 25px var(--shadow-color); /* Sombra mejorada */
+}
+
+/* Contenedores de formularios */
+.container-form {
+    width: 50%; /* Cada formulario ocupa la mitad por defecto */
+    flex-shrink: 0; /* Evita que se encojan */
+    display: flex; /* Asegura que el formulario interno se centre */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Espaciado interno */
+    transition: transform var(--transition-speed);
+}
+
+.container-form form {
+    width: 100%; /* El formulario ocupa todo el ancho de su contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Espaciado horizontal para el contenido del formulario */
+}
+
+.container-form h2 {
+    font-size: 2.2em; /* Tamaño de fuente responsivo */
+    margin-bottom: 25px;
+    color: var(--text-color-dark);
+    text-align: center; /* Centrar el título */
+}
+
+.social-networks {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-bottom: 25px;
+}
+
+.social-networks ion-icon {
+    border: 1px solid var(--extra-light-purple);
+    border-radius: 50%; /* Hacerlos circulares */
+    padding: 12px; /* Más padding para hacerlos más grandes y fáciles de tocar */
+    cursor: pointer;
+    font-size: 1.5em; /* Tamaño del icono */
+    color: var(--primary-purple);
+    transition: all 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.social-networks ion-icon:hover {
+    background-color: var(--extra-light-purple);
+    color: var(--dark-purple);
+    transform: translateY(-3px); /* Pequeño efecto al pasar el ratón */
+}
+
+.container-form span {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    color: var(--text-color-dark);
+    text-align: center;
+}
+
+.container-input {
+    width: 100%; /* Ocupa el 100% del ancho del formulario */
+    max-width: 350px; /* Ancho máximo para inputs */
+    height: 45px; /* Altura ligeramente mayor */
+    margin-bottom: 15px; /* Más espacio entre inputs */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el input */
+    padding: 0 15px;
+    background-color: var(--background-light);
+    border-radius: 8px; /* Bordes redondeados para los inputs */
+    border: 1px solid transparent; /* Borde transparente por defecto */
+    transition: border-color 0.3s ease;
+}
+
+.container-input:focus-within {
+    border-color: var(--primary-purple); /* Borde al enfocar */
+}
+
+.container-input ion-icon {
+    color: var(--primary-purple); /* Color de los iconos de input */
+}
+
+.container-input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    font-size: 1em;
+    color: var(--text-color-dark);
+}
+
+.container-input input::placeholder {
+    color: #a0a0a0;
+}
+
+.container-form a {
+    color: var(--primary-purple);
+    font-size: 0.9em;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    text-decoration: none; /* Quitar subrayado por defecto */
+    transition: color 0.3s ease;
+}
+
+.container-form a:hover {
+    color: var(--dark-purple);
+}
+
+.button {
+    width: 180px; /* Ancho un poco mayor para el botón */
+    height: 50px; /* Altura un poco mayor */
+    font-size: 1.1em; /* Texto más grande */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: var(--primary-purple);
+    color: var(--text-color-light);
+    font-weight: 600; /* Negrita */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--dark-purple);
+    transform: translateY(-2px);
+}
+
+/* Animaciones de formularios */
+.sign-up {
+    transform: translateX(100%); /* Inicialmente a la derecha para signup */
+}
+
+.container.toggle .sign-in {
+    transform: translateX(-100%); /* signIn se mueve a la izquierda */
+}
+
+.container.toggle .sign-up {
+    transform: translateX(0%); /* signUp se mueve a su posición original */
+}
+
+/* Contenedor de bienvenida */
+.container-welcome {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar contenido del welcome */
+    transform: translateX(0%); /* Inicialmente a la izquierda */
+    background-color: var(--dark-purple);
+    transition: transform var(--transition-speed), border-radius var(--transition-speed);
+    overflow: hidden;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0; /* Bordes redondeados a la derecha */
+    z-index: 100; /* Asegura que esté por encima de los formularios */
+}
+
+.container.toggle .container-welcome {
+    transform: translateX(100%); /* Se mueve a la derecha */
+    border-radius: var(--border-radius) 0 0 var(--border-radius); /* Bordes redondeados a la izquierda */
+    background-color: var(--primary-purple); /* Cambia de color al mover */
+}
+
+.container-welcome .welcome {
+    position: absolute; /* Para controlar individualmente el movimiento de los welcomes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 40px; /* Ajuste de padding */
+    color: var(--text-color-light);
+    text-align: center;
+    transition: transform var(--transition-speed);
+}
+
+.welcome-sign-in {
+    transform: translateX(100%); /* Inicialmente a la derecha para sign-in welcome */
+}
+
+.container-welcome h3 {
+    font-size: 2.8em; /* Tamaño de fuente responsivo */
+    margin-bottom: 10px;
+}
+
+.container-welcome p {
+    font-size: 1.05em; /* Tamaño de fuente ligeramente mayor */
+    line-height: 1.5; /* Espaciado de línea para mejor legibilidad */
+}
+
+.container-welcome .button {
+    border: 2px solid var(--text-color-light);
+    background-color: transparent;
+}
+
+.container-welcome .button:hover {
+    background-color: var(--text-color-light);
+    color: var(--primary-purple);
+}
+
+.container.toggle .welcome-sign-in {
+    transform: translateX(0); /* welcome-sign-in se mueve a su posición original */
+}
+
+.container.toggle .welcome-sign-up {
+    transform: translateX(-100%); /* welcome-sign-up se mueve a la izquierda */
+}
+
+/* --- Media Queries para Responsividad --- */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        height: auto; /* Altura automática */
+        min-height: 600px; /* Asegura un mínimo de altura */
+        max-width: 450px; /* Ancho máximo en tablets */
+    }
+
+    .container-form {
+        width: 100%; /* Los formularios ocupan todo el ancho */
+        height: auto;
+        padding-top: 50px; /* Más padding superior para dejar espacio */
+        padding-bottom: 50px; /* Más padding inferior */
+        position: absolute; /* Para que se superpongan */
+        top: 0;
+        left: 0;
+        transform: translateY(0); /* Resetear transform para móvil */
+        z-index: 1; /* Para controlar el orden de apilamiento */
+    }
+
+    .container-form.sign-up {
+        transform: translateY(100%); /* Ocultar signUp abajo */
+    }
+
+    .container.toggle .container-form.sign-in {
+        transform: translateY(-100%); /* signIn se mueve arriba */
+    }
+
+    .container.toggle .container-form.sign-up {
+        transform: translateY(0%); /* signUp se mueve a su posición */
+    }
+
+    .container-welcome {
+        position: relative; /* Vuelve a ser parte del flujo normal */
+        width: 100%;
+        height: 200px; /* Altura fija para el welcome */
+        transform: translateY(0%); /* Resetear transform */
+        border-radius: var(--border-radius) var(--border-radius) 0 0; /* Redondeado solo arriba */
+        order: -1; /* Mover el welcome al principio visualmente */
+    }
+
+    .container.toggle .container-welcome {
+        transform: translateY(0%); /* Mantiene la misma posición */
+        border-radius: var(--border-radius) var(--border-radius) 0 0; /* Mantiene el redondeado */
+        background-color: var(--dark-purple); /* Color base */
+    }
+
+    .container-welcome .welcome {
+        position: relative; /* Vuelve a ser parte del flujo */
+        padding: 0 20px;
+        transform: translateY(0%); /* Resetear transform */
+    }
+
+    .container.toggle .welcome-sign-in {
+        transform: translateY(0); /* No hay traducción vertical en mobile */
+    }
+    .container.toggle .welcome-sign-up {
+        transform: translateY(0); /* No hay traducción vertical en mobile */
+    }
+
+    .welcome-sign-in,
+    .welcome-sign-up {
+        opacity: 1; /* Siempre visible en móvil, se maneja con la visibilidad del padre */
+        position: relative;
+        transform: none; /* Eliminar transformaciones en móvil */
+        display: none; /* Ocultar por defecto y mostrar con JS */
+    }
+
+    .container.toggle .welcome-sign-in {
+        display: flex; /* Mostrar el welcome-sign-in cuando toggle */
+    }
+
+    .container:not(.toggle) .welcome-sign-up {
+        display: flex; /* Mostrar el welcome-sign-up cuando NO toggle */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .container-form h2 {
+        font-size: 1.8em;
+    }
+
+    .container-input {
+        max-width: 280px; /* Ajuste para pantallas aún más pequeñas */
+    }
+
+    .button {
+        width: 150px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    .container-welcome h3 {
+        font-size: 2.2em;
+    }
+
+    .container-welcome p {
+        font-size: 0.9em;
+    }
+}

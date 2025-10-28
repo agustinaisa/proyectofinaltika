@@ -1,0 +1,114 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: #e2cdd6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right,#f4eef3, #9d38e5,#34052a); 
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none; /* oculto por defecto */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #e2cdd6;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+    }
+    .close {
+      color: #333;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #861313;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+      color: #040404;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input, form select {
+      width: 100%;
+      margin-top: 5px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button.submit-btn {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      background: #1c29b9;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button.submit-btn:hover {
+      background: #0a0349;
+    }
+    .lista-turnos {
+      list-style: none;
+      padding: 0;
+    }
+    .lista-turnos li {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+    .detalle {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    /* Botón para abrir modal */
+    #btnAbrirModal {
+      margin: 20px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      background-color: #861313;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #btnAbrirModal:hover {
+      background-color: #e478e4;
+    }

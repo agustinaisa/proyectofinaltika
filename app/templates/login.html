@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIKA - Iniciar Sesión / Registrarse</title> 
+    <link rel="stylesheet" href="{% static 'css/StyleLogin.css' %}">
+    <link rel="stylesheet" href="static\css\StyleLogin.css">
+
+
+</head>
+<body>
+    <main class="container"> <section class="container-form"> <form class="sign-in">
+                <h2>Iniciar Sesión</h2>
+                <div class="social-networks">
+                    <a href="https://www.instagram.com/tika.et" target="_blank" aria-label="Visita nuestro Instagram">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://www.facebook.com/tikaespacioterapeutico" target="_blank" aria-label="Visita nuestro Facebook">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </div>
+                <span>Usa tu correo y contraseña</span>
+                <div class="container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" placeholder="Email" required autocomplete="username"> </div>
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" placeholder="Contraseña" required autocomplete="current-password"> </div>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <button class="button" type="submit">INICIAR SESIÓN</button> </form>
+        </section>
+
+        <section class="container-form"> <form class="sign-up">
+                <h2>Registrarse</h2>
+                <div class="social-networks">
+                    <a href="https://www.instagram.com/tika.et" target="_blank" aria-label="Visita nuestro Instagram">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://www.facebook.com/tikaespacioterapeutico" target="_blank" aria-label="Visita nuestro Facebook">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </div>
+                <span>Usa tu correo electrónico para registrarte</span>
+                <div class="container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" placeholder="Nombre" required autocomplete="name">
+                </div>
+                <div class="container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" placeholder="Email" required autocomplete="email">
+                </div>
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" placeholder="Contraseña" required autocomplete="new-password">
+                </div>
+                <button class="button" type="submit">REGISTRARSE</button>
+            </form>
+        </section>
+
+        <section class="container-welcome"> <div class="welcome-sign-up welcome">
+                <h3>¡Bienvenido!</h3>
+                <p>Ingresa tus datos para usar todas las funciones de TIKA</p>
+                <button class="button" id="btn-sign-up">Registrarse</button>
+            </div>
+            <div class="welcome-sign-in welcome">
+                <h3>¡Hola!</h3>
+                <p>Ingresa tus datos para usar todas las funciones de TIKA</p>
+                <button class="button" id="btn-sign-in">Iniciar Sesión</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script> <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
