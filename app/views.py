@@ -67,3 +67,6 @@ def paciente_delete(request, pk):
 def estadistica_view(request):
     estados = EstadoPaciente.objects.all()
     return render(request, 'estadistica.html', {'estados': estados})   
+
+def comprobantes_view(request):
+    return render(request, 'comprobantes.html')
