@@ -6,8 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-
-
+from django.contrib.auth.models import User
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
@@ -254,3 +253,33 @@ class Entrevista(models.Model):
 
     class Meta:
         db_table = 'entrevista'
+
+class Contacto(models.Model):
+    telefono = models.CharField(max_length=50, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    direccion = models.CharField(max_length=200, blank=True, null=True)
+    horario = models.CharField(max_length=200, blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+    facebook = models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return "Datos de contacto del sitio"
+    
+class Testimonio(models.Model):
+    ESTADOS = [
+        ('pendiente', 'Pendiente'),
+        ('aprobado', 'Publicado'),
+        ('restringido', 'Restringido'),
+    ]
+
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='testimonios')
+    titulo = models.CharField(max_length=100, verbose_name="Título del testimonio")
+    relacion = models.CharField(max_length=100, verbose_name="Tu relación con el niño/a (ejemplo: Mamá de Mateo, Tutor de Ana)")
+    contenido = models.TextField(verbose_name="Contenido")
+    fecha_envio = models.DateTimeField(auto_now_add=True)
+    estado = models.CharField(max_length=20, choices=ESTADOS, default='pendiente')
+    publicado = models.BooleanField(default=False)
+    imagen = models.ImageField(upload_to='testimonios/', blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.titulo} - {self.usuario.username}"

@@ -3,6 +3,7 @@ from app import views
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
 
+
 urlpatterns = [
     path("", views.index, name="index"),
     path("login/", auth_views.LoginView.as_view(template_name="login.html"), name="login"),
@@ -19,4 +20,15 @@ urlpatterns = [
     path("pacientes/nuevo/", views.paciente_create, name="pacientes_create"),
     path("pacientes/editar/<int:pk>/", views.paciente_update, name="pacientes_update"),
     path("pacientes/eliminar/<int:pk>/", views.paciente_delete, name="pacientes_delete"),
+    
+    # TESTIMONIO
+    path("testimonios/", views.testimonios_inicio, name="testimonios_inicio"),
+    path("testimonios/enviar/", views.enviar_testimonio, name="enviar_testimonio"),
+
+    #  Panel del admin (para profesionales)
+    path("dashboard/testimonios/", views.testimonios_lista, name="testimonios_lista"),
+    path("dashboard/testimonios/aprobar/<int:id>/", views.aprobar_testimonio, name="aprobar_testimonio"),
+    path("dashboard/testimonios/restringir/<int:id>/", views.restringir_testimonio, name="restringir_testimonio"),
+    path("testimonios/publicos/", views.testimonios_publicos, name="testimonios_publicos"),
+    path("dashboard/testimonios/eliminar/<int:id>/", views.eliminar_testimonio, name="eliminar_testimonio"),
 ]
